@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Courses & Colleges · Bangalore University</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="css/style.css" rel="stylesheet">
+</head>
+<body data-admin-page="courses">
+  <nav class="navbar navbar-expand-lg navbar-dark px-3 py-3"><a class="navbar-brand fw-bold" href="index.html">Bangalore University <span>AdmitAI</span></a><div class="navbar-nav ms-auto" id="navLinks"></div></nav>
+  <main class="container py-5">
+    <p class="eyebrow">ADMIN PORTAL</p><h2>Courses & colleges</h2><p class="muted">Maintain the postgraduate course catalogue and review college offerings.</p>
+    <div id="adminPageNavigation" class="d-flex flex-wrap gap-2 mb-4"></div>
+    <div class="card-panel mb-4"><h4>Add course option</h4><form id="adminCourseForm" class="row g-2"><div class="col-md-4"><input class="form-control" name="course_name" placeholder="Course name" required></div><div class="col-md-2"><input class="form-control" name="duration" placeholder="Duration" required></div><div class="col-md-2"><input class="form-control" name="minimum_qualification" placeholder="Minimum qualification" required></div><div class="col-md-2"><input class="form-control" name="minimum_percentage" type="number" min="0" max="100" placeholder="Min %" required></div><div class="col-md-2"><input class="form-control" name="fees" type="number" min="0" placeholder="Fees" required></div><div class="col-12"><textarea class="form-control" name="description" placeholder="Course description" required></textarea></div><div class="col-12"><button class="btn btn-primary">Add course</button></div></form></div>
+    <div class="card-panel mb-4"><h4>Current course options</h4><div class="table-responsive"><table class="table"><thead><tr><th>Course</th><th>Minimum %</th><th>Fees</th><th>Duration</th></tr></thead><tbody id="adminCourses"></tbody></table></div></div>
+    <div class="card-panel"><h4>Current colleges</h4><div class="table-responsive"><table class="table"><thead><tr><th>College</th><th>Location</th><th>Course count</th><th>Course options</th></tr></thead><tbody id="adminColleges"></tbody></table></div></div>
+  </main>
+  <div id="toast" class="toast-box"></div><script src="js/app.js?v=admin-pages-2"></script>
+</body>
+</html>
