@@ -26,6 +26,7 @@ MAX_DOCUMENT_BYTES = 10 * 1024 * 1024
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    UPLOAD_ROOT.mkdir(parents=True, exist_ok=True)
     Base.metadata.create_all(bind=engine)
     # Keep existing installations compatible when new course-assignment fields
     # are added after the first database startup.  The columns are nullable so
@@ -579,4 +580,8 @@ def delete_college(college_id: int, _: User = Depends(admin_user), db: Session =
 
 
 FRONTEND = Path(__file__).resolve().parents[2] / "frontend"
+if not FRONTEND.exists():
+    candidate = Path(__file__).resolve().parents[1] / "frontend"
+    if candidate.exists():
+        FRONTEND = candidate
 app.mount("/", StaticFiles(directory=FRONTEND, html=True), name="frontend")

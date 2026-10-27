@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: college-admission-system
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    healthCheckPath: /docs
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini
+      - key: APPLICATION_FEE
+        value: 500.0
+      - key: DATABASE_URL
+        fromDatabase:
+          name: admission-db
+          property: connectionString
+
+databases:
+  - name: admission-db
+    databaseName: college_admission
+    user: admission_user
+    plan: free

@@ -10,6 +10,14 @@ class Settings(BaseSettings):
     openai_api_key: str | None = None
     openai_model: str = "gpt-4o-mini"
     application_fee: float = 500.0
+    host: str = "0.0.0.0"
+    port: int = 8000
+    smtp_host: str | None = None
+    smtp_port: int = 587
+    smtp_username: str | None = None
+    smtp_password: str | None = None
+    smtp_from_email: str | None = None
+    smtp_use_tls: bool = True
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
 

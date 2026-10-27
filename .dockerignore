@@ -1,0 +1,14 @@
+.git
+.gitignore
+.venv
+__pycache__
+*.py[cod]
+*$py.class
+*.env
+.pytest_cache
+.vscode
+.idea
+*.log
+college_admission_system/backend/.venv
+college_admission_system/backend/uploads/*
+!college_admission_system/backend/uploads/.gitkeep

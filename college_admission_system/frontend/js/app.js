@@ -1,5 +1,7 @@
 const state = { token: localStorage.getItem('bcu_token'), user: null, courses: [], colleges: [], selectedAdmission: null };
-const API_ROOT = window.location.protocol === 'file:' || (window.location.port && window.location.port !== '8000')
+const API_ROOT = window.location.protocol === 'file:' ||
+  (['5500', '5501', '3000', '5173'].includes(window.location.port) &&
+   (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'))
   ? 'http://127.0.0.1:8000/api'
   : '/api';
 const $ = selector => document.querySelector(selector);

@@ -55,14 +55,24 @@ college_admission_system/
 └── README.md
 ```
 
-## Setup (Windows / Python 3.12)
+## Quick Start with Docker (Recommended)
+
+Run the full stack (FastAPI web app + MySQL database) with a single command:
+
+```bash
+docker compose up -d --build
+```
+
+Access the application at [http://localhost:8000](http://localhost:8000). See [DEPLOYMENT.md](DEPLOYMENT.md) for full cloud and VPS deployment options (Render, Railway, Nginx).
+
+## Manual Setup (Windows / Python 3.12)
 
 1. Install and start MySQL Server.
 2. Run `database/schema.sql` in MySQL Workbench, or allow the API to create tables after you create the `college_admission` database.
 3. In PowerShell, run:
 
 ```powershell
-cd "C:\Users\moni\OneDrive\Documents\ChatGPT\agentic ai\college_admission_system\backend"
+cd backend
 py -3.12 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
